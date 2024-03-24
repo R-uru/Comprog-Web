@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Password Matching</title>
+<style>
+    .error {
+        color: red;
+    }
+
+    .success {
+        color: green;
+    }
+</style>
+</head>
+<body>
+    <form id="passwordForm">
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" oninput="checkPasswords()"><br>
+        <label for="confirmPassword">Retype Password:</label><br>
+        <input type="password" id="confirmPassword" name="confirmPassword" oninput="checkPasswords()"><br>
+        <span id="passwordMatch"></span><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function checkPasswords() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            var passwordMatch = document.getElementById("passwordMatch");
+
+            if (password !== confirmPassword) {
+                passwordMatch.textContent = "Passwords do not match";
+                passwordMatch.className = "error";
+            } else {
+                passwordMatch.textContent = "Passwords match!";
+                passwordMatch.className = "success";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login | Create Account</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      function passReveal() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <section>
+      <div class="box">
+        <div class="content">
+          <form action="inde.html">
+            <h4>Sign in</h4>
+            <div class="input">
+              <input type="email" required />
+            </div>
+            <div class="input">
+              <input type="password" id="password" />
+            </div>
+            <p class="show"><input type="checkbox" onclick="passReveal()"> Show password</p>
+            <div class="input">
+                <input type="submit" value="Login" />
+            </div>
+            <p class="label"><input type="checkbox"> Remember me.</p>
+            <p class="label">
+              Don't have an account? <a href="/signup/signup.html">Create account</a>
+            </p>
+            <p class="label">Forget password? <a href="/recover/index.html">Recover</a></p>
+          </form>
+        </div>
+      </div>
+    </section>
+    <div class="credits">Made by: Rusell</div>
+  </body>
+</html>
